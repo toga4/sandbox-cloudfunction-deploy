@@ -23,22 +23,13 @@ jobs:
         name: Authenticate to Google Cloud
         uses: google-github-actions/auth@main
         with:
-          create_credentials_file: true
+          token_format: access_token
           workload_identity_provider: projects/1072832062356/locations/global/workloadIdentityPools/github-actions-pool/provider/token-provider
           service_account: github-actions@sandbox-toga4-211010cf.iam.gserviceaccount.com
-
-      # Install gcloud, do not specify authentication.
-      - uses: google-github-actions/setup-gcloud@master
-        with:
-          project_id: sandbox-toga4-211010cf
-          export_default_credentials: true
-
-      - name: gcloud auth login by workload identity
-        run: |-
-          gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}"
 
       - id: Deploy
         uses: toga4/deploy-cloud-functions@main
         with:
           name: SandboxCFDeploy
           runtime: go116
+          credentials: ${{ steps.auth.outputs.access_token }}

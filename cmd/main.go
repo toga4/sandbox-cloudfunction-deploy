@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	"github.com/toga4/sandbox-cloudfunction-deploy/function"
+	function "github.com/toga4/sandbox-cloudfunction-deploy"
 )
 
 func main() {

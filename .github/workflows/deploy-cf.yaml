@@ -35,6 +35,7 @@ jobs:
       - id: Deploy
         uses: toga4/deploy-cloud-functions@main
         with:
+          project_id: sandbox-toga4-211010cf
           name: SandboxCFDeploy
           runtime: go116
           credentials: ${{ steps.cred.outputs.credentials }}

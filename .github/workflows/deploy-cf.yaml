@@ -8,6 +8,12 @@ jobs:
   deploy-cf:
     name: Deploy to Cloud Function
     runs-on: ubuntu-latest
+
+    # Add "id-token" with the intended permissions.
+    permissions:
+      contents: "read"
+      id-token: "write"
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2

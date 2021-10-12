@@ -39,4 +39,4 @@ jobs:
           project_id: sandbox-toga4-211010cf
           name: SandboxCFDeploy
           runtime: go116
-          credentials: ${{ steps.cred.outputs.credentials }}
+          credentials: ${{ secrets.GCP_SA_KEY }}

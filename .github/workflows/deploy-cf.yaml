@@ -34,7 +34,7 @@ jobs:
           echo "::set-output name=credentials::$(cat ${{steps.auth.outputs.credentials_file_path}})"
 
       - id: Deploy
-        uses: toga4/deploy-cloud-functions@main
+        uses: toga4/deploy-cloud-functions@feature/secrets
         with:
           project_id: sandbox-toga4-211010cf
           name: SandboxCFDeploy

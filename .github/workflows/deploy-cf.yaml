@@ -40,3 +40,9 @@ jobs:
           name: SandboxCFDeploy
           runtime: go116
           credentials: ${{ secrets.GCP_SA_KEY }}
+          secrets: |
+            ENV_VAR1=FOO_SECRET:1
+            ENV_VAR2=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET:1
+            ENV_VAR3=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET/versions/latest
+            /etc/secrets/SECRET4=FOO_SECRET:1
+            /etc/secrets:/SECRET5=FOO_SECRET:latest

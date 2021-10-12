@@ -24,6 +24,7 @@ jobs:
         uses: google-github-actions/auth@main
         with:
           create_credentials_file: true
+          activate_credentials_file: false
           workload_identity_provider: projects/1072832062356/locations/global/workloadIdentityPools/github-actions-pool/provider/token-provider
           service_account: github-actions@sandbox-toga4-211010cf.iam.gserviceaccount.com
 

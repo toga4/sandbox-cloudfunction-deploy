@@ -43,3 +43,4 @@ jobs:
           secrets: |
             ENV_VAR1=FOO_SECRET:latest
             /etc/secrets/SECRET2=FOO_SECRET:1
+            /etc/secrets:/SECRET3=FOO_SECRET:1

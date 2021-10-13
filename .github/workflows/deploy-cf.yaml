@@ -42,3 +42,4 @@ jobs:
           credentials: ${{ secrets.GCP_SA_KEY }}
           secrets: |
             ENV_VAR1=FOO_SECRET:1
+            /etc/secrets/SECRET2=FOO_SECRET:1

@@ -45,3 +45,4 @@ jobs:
             /etc/secrets/SECRET2=FOO_SECRET:1
             /etc/secrets:/SECRET3=FOO_SECRET:1
             /etc/secrets/SECRET4=FOO_SECRET:latest
+            /secrets/SECRET5=FOO_SECRET:latest

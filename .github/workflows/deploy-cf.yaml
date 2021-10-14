@@ -47,3 +47,4 @@ jobs:
             /etc/secrets/SECRET4=FOO_SECRET:latest
             /secrets/SECRET5=FOO_SECRET:latest
             ENV_VAR2=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET:1
+            ENV_VAR3=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET/versions/1

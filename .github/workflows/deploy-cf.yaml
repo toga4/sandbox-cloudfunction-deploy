@@ -41,10 +41,15 @@ jobs:
           runtime: go116
           credentials: ${{ secrets.GCP_SA_KEY }}
           secrets: |
-            ENV_VAR1=FOO_SECRET:latest
-            /etc/secrets/SECRET2=FOO_SECRET:1
-            /etc/secrets:/SECRET3=FOO_SECRET:1
-            /etc/secrets/SECRET4=FOO_SECRET:latest
-            /secrets/SECRET5=FOO_SECRET:latest
+            ENV_VAR1=FOO_SECRET:1
             ENV_VAR2=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET:1
             ENV_VAR3=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET/versions/1
+            ENV_VAR4=FOO_SECRET:latest
+            ENV_VAR5=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET:latest
+            ENV_VAR6=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET/versions/latest
+            /etc/secrets:/SECRET1=FOO_SECRET:1
+            /secrets:/SECRET2=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET:1
+            /etc/secrets:/SECRET3=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET/versions/1
+            /secrets/SECRET4=FOO_SECRET:latest
+            /etc/secrets/SECRET5=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET:latest
+            /secrets/SECRET6=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET/versions/latest

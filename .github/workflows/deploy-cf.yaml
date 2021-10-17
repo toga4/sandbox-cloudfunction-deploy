@@ -23,15 +23,14 @@ jobs:
         name: Authenticate to Google Cloud
         uses: google-github-actions/auth@main
         with:
-          create_credentials_file: true
-          activate_credentials_file: false
+          token_format: "access_token"
           workload_identity_provider: projects/1072832062356/locations/global/workloadIdentityPools/github-actions-pool/provider/token-provider
           service_account: github-actions@sandbox-toga4-211010cf.iam.gserviceaccount.com
 
       - id: cred
         name: Read credentials
         run: |
-          echo "::set-output name=credentials::$(cat ${{steps.auth.outputs.credentials_file_path}})"
+          echo ${{ steps.auth.outputs.access_token }}
 
       - id: Deploy
         uses: toga4/deploy-cloud-functions@feature/secrets-test
@@ -39,7 +38,7 @@ jobs:
           project_id: sandbox-toga4-211010cf
           name: SandboxCFDeploy
           runtime: go116
-          credentials: ${{ secrets.GCP_SA_KEY }}
+          credentials: ${{ steps.auth.outputs.access_token }}
           secrets: |
             ENV_VAR1=FOO_SECRET:1
             ENV_VAR2=projects/sandbox-toga4-211010cf/secrets/FOO_SECRET:1

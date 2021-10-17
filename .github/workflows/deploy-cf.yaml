@@ -25,6 +25,7 @@ jobs:
         with:
           token_format: "access_token"
           workload_identity_provider: projects/1072832062356/locations/global/workloadIdentityPools/github-actions-pool/provider/token-provider
+          audience: projects/1072832062356/locations/global/workloadIdentityPools/github-actions-pool/provider/token-provider
           service_account: github-actions@sandbox-toga4-211010cf.iam.gserviceaccount.com
 
       - id: cred

@@ -30,11 +30,6 @@ jobs:
           workload_identity_provider: projects/1072832062356/locations/global/workloadIdentityPools/github-actions-pool/providers/token-provider
           service_account: github-actions@sandbox-toga4-211010cf.iam.gserviceaccount.com
 
-      - id: gcloud
-        name: Authenticate gcloud CLI
-        run: |
-          gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}"
-
       - id: Deploy
         uses: toga4/deploy-cloud-functions@feature/secrets-test
         with:

@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+env:
+  GCLOUD_PROJECT: sandbox-toga4-211010cf
+
 jobs:
   deploy-cf:
     name: Deploy to Cloud Function
@@ -35,7 +38,6 @@ jobs:
       - id: Deploy
         uses: toga4/deploy-cloud-functions@feature/secrets-test
         with:
-          project_id: sandbox-toga4-211010cf
           name: SandboxCFDeploy
           runtime: go116
           secrets: |
